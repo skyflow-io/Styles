@@ -14,7 +14,7 @@ $filesFinder->files()->in('/app/src');
 
 foreach ($filesFinder as $file) {
     $result[] = [
-        'name' => preg_replace('#\.js$#', '', $file->getFilename()),
+        'name' => preg_replace('#(^_+|\.s?css$)#', '', $file->getFilename()),
         'directory' => $file->getRelativePath(),
         'filename' => $file->getFilename(),
         'contents' => $file->getContents(),
