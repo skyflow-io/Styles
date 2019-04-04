@@ -23,3 +23,5 @@ deploy:
   script: rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR/styles.json lewebpedagogique@51.15.187.88:/srv/http/skyflow/data/styles.json
   on:
     branch: master
+notifications:
+  webhooks: https://skyflow-travis-telegram-bot.herokuapp.com/
